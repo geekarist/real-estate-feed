@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : osnews.rss.xml.xml
+    Created on : July 13, 2013, 12:11 PM
+    Author     : cp
+    Description:
+        Purpose of the document follows.
+-->
+
+<rss xmlns:osnews="http://osnews.com/rss2#" version="2.0">
+    <channel>
+        <title>OSNews</title>
+        <link>http://www.osnews.com</link>
+        <description>Exploring the Future of Computing</description>
+        <language>en-us</language>
+        <copyright>Copyright 2001-2013, David Adams</copyright>
+        <lastBuildDate>Sat, 13 Jul 2013 09:54:01 GMT</lastBuildDate>
+        <image>
+            <url>http://www.osnews.com/images/osnews.gif</url>
+            <title>OSNews.com</title>
+            <link>http://www.osnews.com</link>
+        </image>
+        <item>
+            <title>Microsoft details new WP8 update, but real fixes won't come until 2014</title>
+            <link>http://osnews.com/story/27186/Microsoft_details_new_WP8_update_but_real_fixes_won_t_come_until_2014</link>
+            <guid isPermaLink="true">http://osnews.com/story/27186/Microsoft_details_new_WP8_update_but_real_fixes_won_t_come_until_2014</guid>
+            <description>The general gist? A minor update somewhere this year, but the real update won't come until 2014. In the meantime, we'll have to... 
+            "Resuming..." ...settle for CardDAV/CalDAV support, some additional HTML5 support, and fixes for Xbox Music metadata. We were promised regular updates and 
+            an early access program for enthusiasts - but Microsoft failed to deliver, once more. For all intents and purposes, thanks... "Resuming..." ...to the switch 
+            to the Windows NT kernel, the Windows Phone we're using today has very little additional functionality to offer over what we were using on WP7 release day. 
+            I've been a Windows Phone user since WP7 release day, but Microsoft has lost me.
+            </description>
+            <pubDate>Fri, 12 Jul 2013 12:01:07 GMT</pubDate>
+            <author>donotreply@osnews.com (Thom Holwerda)</author>
+            <category>Windows</category>
+        </item>
+        <item>
+            <title>The OPPO Find 5 - Nexus but not from Google</title>
+            <link>http://osnews.com/story/27185/The_OPPO_Find_5_-_Nexus_but_not_from_Google</link>
+            <guid isPermaLink="true">http://osnews.com/story/27185/The_OPPO_Find_5_-_Nexus_but_not_from_Google</guid>
+            <description>I was in the running for a new Android phone, and I was quite dead set on getting a Nexus 4 - however, there was another phone in the 
+            running: the OPPO Find 5, a smrtphone with lots of positive reviews, but from a small manufacturer. The point that made me choose the Find 5 over 
+            the Nexus 4? OPPO actively supports the ROM community by giving away free phones, and boasts support for CyanogenMod, Paranoid Android, and an AOSP ROM, 
+            and obviously, rooting is easy. OPPO also updates its own firmware/ROM twice per month with new features, which is a far cry from the big boys. If 
+            you're looking for a new Android phone, you might want to consider looking beyond the established players as well, and support a company who works 
+            closely with the community - something the big player still need to learn properly. Once the device arrives on my doorstep, I'll be sure to tell you 
+            all about it, and if it lives up to the hype. It is, after all, from a relatively unknown company, so I am taking a risk here. I am a little bit nervous. 
+            But hey, if none of us takes the risk, we'll be stuck with the big players forever.
+            </description>            
+            <pubDate>Fri, 12 Jul 2013 11:14:05 GMT</pubDate>
+            <author>donotreply@osnews.com (Thom Holwerda)</author>
+            <category>PDAs, Cellphones, Wireless</category>
+        </item>
+    </channel>
+</rss>
