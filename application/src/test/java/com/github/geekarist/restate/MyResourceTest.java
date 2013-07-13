@@ -49,10 +49,9 @@ public class MyResourceTest {
 	public void shouldProduceValidRssFeed() throws XPathExpressionException, ParserConfigurationException, SAXException, IOException {
 		// GIVEN
 		MyResource instance = new MyResource();
-		String news = "news.html";
 
 		// WHEN
-		String rss = instance.getIt(news);
+		String rss = instance.getIt();
 
 		// THEN
 		assertXpathMatches(rss, "//rss/channel/item[1]/link", 
