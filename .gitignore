@@ -6,3 +6,7 @@
 *.ear
 ref.sublime-workspace
 target
+application/.classpath
+application/.project
+application/.settings/
+workspace/

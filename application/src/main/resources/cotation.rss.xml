@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0">
+	<channel>
+		<title>Cotation Immobilière</title>
+		<link>http://cotation-immobiliere.fr</link>
+		<description>REVUE DE PRESSE IMMO</description>
+		<item>
+			<title>Embellie surprise du pouvoir d’achat immobilier des Parisiens</title>
+			<link>http://www.lesechos.fr/patrimoine/immobilier/actu/0202857869421-embellie-surprise-du-pouvoir-d-achat-immobilier-des-parisiens-580285.php?xtor=EPR-1500-[patrimoine]-20130627-[s=461370_n=8_c=801_]-1291412[_SDV]@1</link>
+			<pubDate>Thu, 27 Jun 2013</pubDate>
+			<source>lesechos</source>
+		</item>
+		<item>
+			<title>Duflot fait enrager les pros</title>
+			<link>http://www.boursorama.com/actualites/immobilier-duflot-fait-enrager-les-pros-aff34549b570fd76a8bad88c06e94bc8</link>
+			<pubDate>Wed, 26 Jun 2013</pubDate>
+			<source>boursorama</source>
+		</item>
+	</channel>
+</rss>

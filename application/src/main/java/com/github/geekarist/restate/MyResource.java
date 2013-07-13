@@ -1,22 +1,27 @@
-
 package com.github.geekarist.restate;
+
+import java.io.IOException;
+import java.net.URL;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-/** Example resource class hosted at the URI path "/myresource"
+import org.apache.commons.io.FileUtils;
+
+import com.google.common.base.Charsets;
+import com.google.common.io.Resources;
+
+/**
+ * Example resource class hosted at the URI path "/myresource"
  */
 @Path("/myresource")
 public class MyResource {
-    
-    /** Method processing HTTP GET requests, producing "text/plain" MIME media
-     * type.
-     * @return String that will be send back as a response of type "text/plain".
-     */
-    @GET 
-    @Produces("text/plain")
-    public String getIt() {
-        return "Hi there!";
-    }
+
+	@GET
+	@Produces("text/xml")
+	public String getIt(String news) throws IOException {	
+		URL resource = Resources.getResource("cotation.rss.xml");
+		return Resources.toString(resource, Charsets.UTF_8);
+	}
 }
