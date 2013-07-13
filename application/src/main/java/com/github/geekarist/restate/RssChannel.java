@@ -8,6 +8,8 @@ public class RssChannel {
 	private String title;
 	private String link;
 	private String description;
+
+	@javax.xml.bind.annotation.XmlElement(name = "item")
 	private List<RssItem> items = new ArrayList<RssItem>();
 
 	public RssChannel(String title, String link, String description) {
@@ -24,5 +26,5 @@ public class RssChannel {
 	public String toString() {
 		return "RssChannel [title=" + title + ", link=" + link + ", description=" + description + ", items=" + items + "]";
 	}
-	
+
 }
