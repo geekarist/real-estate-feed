@@ -1,5 +1,9 @@
 package com.github.geekarist.restate;
 
+import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
+import static com.github.tomakehurst.wiremock.client.WireMock.get;
+import static com.github.tomakehurst.wiremock.client.WireMock.stubFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static org.fest.assertions.Assertions.assertThat;
 
 import java.io.IOException;
@@ -20,13 +24,21 @@ import javax.xml.xpath.XPathFactory;
 import org.apache.commons.io.input.ReaderInputStream;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.google.common.base.Charsets;
+import com.google.common.io.Resources;
+
 public class MyResourceTest {
+	
+	@Rule
+	public WireMockRule wireMockRule = new WireMockRule(8089);
 
 	public MyResourceTest() {
 	}
@@ -50,9 +62,12 @@ public class MyResourceTest {
 	@Test
 	public void shouldProduceValidRssFeed() throws XPathExpressionException, ParserConfigurationException, SAXException, IOException, JAXBException, ParseException {
 		// GIVEN
-		MyResource instance = new MyResource();
+		String html = Resources.toString(getClass().getClassLoader().getResource("news.html"), Charsets.UTF_8);
+		stubFor(get(urlEqualTo("/news.html"))
+				.willReturn(aResponse().withStatus(200).withBody(html)));
 
 		// WHEN
+		MyResource instance = new MyResource("http://localhost:8089/news.html");
 		String rss = instance.getIt();
 
 		// THEN

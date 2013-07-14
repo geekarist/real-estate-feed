@@ -2,7 +2,6 @@ package com.github.geekarist.restate;
 
 import java.io.IOException;
 import java.io.StringWriter;
-import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -20,20 +19,30 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import com.google.common.base.Charsets;
-import com.google.common.io.Resources;
-
 /**
  * Example resource class hosted at the URI path "/myresource"
  */
 @Path("/myresource")
 public class MyResource {
+	
+	private String newsUrl;
+	
+	public MyResource() {
+		this.newsUrl = "http://cotation-immobiliere.fr";
+	}
+	
+	public MyResource(String newsUrl) {
+		this.newsUrl = newsUrl;
+	}
 
 	@GET
 	@Produces("text/xml")
 	public String getIt() throws IOException, JAXBException, ParseException {
-		URL resource = Resources.getResource("news.html");
-		String html = Resources.toString(resource, Charsets.UTF_8);
+		Document document = Jsoup.connect(newsUrl)
+				.userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
+				.referrer("http://www.google.fr")
+				.get();
+		String html = document.html();
 		String rss = toRss(html);
 		return rss;
 	}
@@ -58,10 +67,8 @@ public class MyResource {
 
 	private String reformatDate(Element e) throws ParseException {
 		String origDate = e.text().split(" - ")[0] + "/" + Calendar.getInstance().get(Calendar.YEAR);
-		System.out.println(origDate);
 		Date date = new SimpleDateFormat("dd/MM/yyyy").parse(origDate);
 		String formattedDate = new SimpleDateFormat("EEE, dd MMM yyyy").format(date);
-		System.out.println(formattedDate);
 		return formattedDate;
 	}
 
